@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Walid's Studio - Designer</title>
+    <link rel="stylesheet" href="styles.css">
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+            </svg>
+            <span>MY PORTFOLIO</span>
+        </a>
+        
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="Work.html">Work</a>
+                <a href="#contact">contact</a>
+                <a href="#store">Store</a>
+            </div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+        </button>
+        <button class="mobile-menu-btn">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="subtitle">Product </h2>
+            <h1 class="title">Designer from Addis Ababa</h1>
+            <p class="bio">
+                Hi, I'm Walid Welcome to my portfolio. 
+                I am a Designer specializing in Furniture Design and Architecture.
+            </p>
+        </div>
+    </section>
+
+    <section class="selected-work">
+        <div class="section-header">
+            <h2>Selected work</h2>
+            <a href="Work.html" class="see-all">See All Work</a>
+        </div>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <article class="project-card" 
+                     data-images='["images/Reception Desk/rdTRC2.png", "images/Reception Desk/rdTRC2back.png", "images/Reception Desk/Reception front.png"]'>
+                <div class="project-image-container">
+                    <img src="images/Reception Desk/rdTRC2.png" alt="Reception Desk" class="project-image">
+                </div>    
+                <div class="project-info">
+                    <h3 class="project-title">Reception Desk</h3>
+                    <p class="project-categories">Brand identity, Packaging</p>
+                </div>
+            </article>
+    
+            <!-- Project 2 -->
+            <article class="project-card" 
+                     data-images='["images/Waiting chair/3S3-min.png", "images/Waiting chair/3S4-min.png", "images/Waiting chair/3S5-min.png"]'>
+                <div class="project-image-container">
+                    <img src="images/Waiting chair/3S3-min.png" alt="Evolve Project" class="project-image">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Evolve</h3>
+                    <p class="project-categories">Brand identity, Packaging</p>
+                </div>
+            </article>
+    
+            <!-- Project 3 -->
+            <article class="project-card" 
+                     data-images='["images/Desks/spider-BS2-min.png", "images/Desks/spider-BS3-min.png", "images/Desks/spider-BS4-min.png"]'>
+                <div class="project-image-container">
+                    <img src="images/Desks/spider-BS2-min.png" alt="Spider Desk" class="project-image">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Spider Desk</h3>
+                    <p class="project-categories">Brand identity, Packaging</p>
+                </div>
+            </article>
+        </div>
+    </section>
+            <!-- Add more projects -->
+        </div>
+    </section>
+     <!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="contact-icons">
+        <!-- Email -->
+        <a href="mailto:dilew7.wb@gmail.com" class="icon-link" title="Email" onclick="copyEmail(event)">
+            <img src="Icons/134146_mail_email_icon (1).png" alt="Email Icon" width="32" height="32">
+        </a>
+        <!-- Telegram -->
+        <a href="https://t.me/@B23wld" target="_blank" class="icon-link" title="Telegram">
+            <img src="Icons/7693324_telegram_social media_logo_messenger_icon.png" alt="Telegram Icon" width="32" height="32">
+
+        </a>
+        <!-- Phone -->
+        <a href="tel:+1234567890" class="icon-link" title="Phone">
+            <img src="Icons/9025726_phone_icon.png" alt="Phone Icon" width="32" height="32">
+
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/walidbeshir/" target="_blank" class="icon-link" title="LinkedIn">
+            <img src="Icons/104493_linkedin_icon.png" alt="linkedin Icon" width="32" height="32">
+
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/wada-23" target="_blank" class="icon-link" title="GitHub">
+            <img src="Icons/211904_social_github_icon.png" alt="github Icon" width="32" height="32">
+        </a>
+    </div>
+</section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
