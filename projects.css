@@ -9,7 +9,7 @@
     --border: #eee;
     --dark-primary: #ffffff;
     --dark-secondary: #cccccc;
-    --dark-bg: #1a1a1a;
+    --dark-bg:#272727;
     --dark-surface: #2d2d2d;
     --dark-border: #404040;
 }
@@ -570,4 +570,90 @@ button:focus-visible {
     }
 }
 
+/* Contact Section */
+.contact-section {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 50px;
+    
 
+}
+.contact-section h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+}
+
+.icon-link {
+    color: #fff; /* Icon color */
+    font-size: 2em; /* Icon size */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    text-decoration: none; /* Remove underline */
+}
+
+.icon-link:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-icons {
+        gap: 20px; /* Reduce space between icons on smaller screens */
+    }
+
+    .icon-link {
+        font-size: 1.5em; /* Smaller icons for mobile */
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: var(--bg);
+    border: 2px solid var(--border);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(150%);
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    transform: translateY(-0.25rem) scale(1.05);
+    background: var(--primary-text);
+    outline: none;
+}
+
+[data-theme="dark"] .back-to-top {
+    border-color: var(--dark-border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+@media (pointer: coarse) {
+    .back-to-top {
+        width: 4rem;
+        height: 4rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}

@@ -95,3 +95,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Back to Top Button Functionality
+const backToTop = () => {
+    const backToTopBtn = document.querySelector('.back-to-top');
+    let isScrolling;
+
+    // Scroll Handler
+    const handleScroll = () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            backToTopBtn.classList.toggle('active', scrollPosition > 300);
+        }, 50);
+    };
+
+    // Click Handler with Smooth Scroll Polyfill
+    const scrollToTop = () => {
+        const startPosition = window.scrollY || document.documentElement.scrollTop;
+        const duration = 600;
+        const startTime = performance.now();
+
+        const animateScroll = (timestamp) => {
+            const timeElapsed = timestamp - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            
+            window.scrollTo(0, startPosition * (1 - easeInOutCubic(progress)));
+            
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animateScroll);
+            }
+        };
+
+        const easeInOutCubic = (t) => {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        };
+
+        requestAnimationFrame(animateScroll);
+    };
+
+    // Event Listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    backToTopBtn.addEventListener('click', scrollToTop);
+    backToTopBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            scrollToTop();
+        }
+    });
+
+    // Initialize
+    handleScroll(); // Check initial position
+};
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', backToTop);
